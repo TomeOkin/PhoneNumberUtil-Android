@@ -1,1 +1,1 @@
-include ':phonenumberutil', ':sample', ':phonenumberutilcore', ':phonenumberutil-dataconverter'
+include ':phonenumberutil', ':sample', ':phonenumberutilcore'
