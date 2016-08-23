@@ -127,7 +127,7 @@ final class MultiFileMetadataSourceImpl implements MetadataSource {
             PhoneMetadata metadata = phoneMetadataList.get(0);
             map.put(key, metadata);
             return metadata;
-        } catch (Throwable e) {
+        } catch (Exception e) {
             logger.log(Level.SEVERE, "cannot load/parse metadata: " + fileName, e);
             throw new RuntimeException("cannot load/parse metadata: " + fileName, e);
         }
@@ -137,12 +137,12 @@ final class MultiFileMetadataSourceImpl implements MetadataSource {
         PhoneMetadataCollection phoneMetadataCollection = new PhoneMetadataCollection();
         try {
             phoneMetadataCollection.readExternal(objectInputStream);
-        } catch (Throwable e2) {
-            logger.log(Level.WARNING, "error reading input (ignored)", e2);
+        } catch (Exception e) {
+            logger.log(Level.WARNING, "error reading input (ignored)", e);
             try {
                 objectInputStream.close();
-            } catch (Throwable e22) {
-                logger.log(Level.WARNING, "error closing input stream (ignored)", e22);
+            } catch (Exception e1) {
+                logger.log(Level.WARNING, "error closing input stream (ignored)", e1);
             }
         }
         return phoneMetadataCollection;

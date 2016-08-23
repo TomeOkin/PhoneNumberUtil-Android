@@ -19,7 +19,7 @@ package com.tomeokin.phonenumberutil;
 /**
  * A source for phone metadata for all regions.
  */
-interface MetadataSource {
+public interface MetadataSource {
   /**
    * Gets phone metadata for a region.
    * @param regionCode the region code.

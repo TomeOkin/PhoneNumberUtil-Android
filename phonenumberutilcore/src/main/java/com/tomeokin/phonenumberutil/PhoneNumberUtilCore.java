@@ -16,6 +16,7 @@
 package com.tomeokin.phonenumberutil;
 
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -447,5 +448,20 @@ public class PhoneNumberUtilCore {
     PhoneMetadata getMetadataForRegionOrCallingCode(int countryCallingCode, String regionCode) {
         return REGION_CODE_FOR_NON_GEO_ENTITY.equals(regionCode) ? getMetadataForNonGeographicalRegion(
             countryCallingCode) : getMetadataForRegion(regionCode);
+    }
+
+    static NumberFormat copyNumberFormat(NumberFormat other) {
+        NumberFormat copy = new NumberFormat();
+        copy.pattern = other.pattern;
+        copy.format = other.format;
+        int leadingDigitsPatternSize = other.leadingDigitsPattern.size();
+        copy.leadingDigitsPattern = new ArrayList<>(leadingDigitsPatternSize);
+        for (int i = 0; i < leadingDigitsPatternSize; i++) {
+            copy.leadingDigitsPattern.add(other.leadingDigitsPattern.get(i));
+        }
+        copy.nationalPrefixFormattingRule = other.nationalPrefixFormattingRule;
+        copy.domesticCarrierCodeFormattingRule = other.domesticCarrierCodeFormattingRule;
+        copy.nationalPrefixOptionalWhenFormatting = other.nationalPrefixOptionalWhenFormatting;
+        return copy;
     }
 }

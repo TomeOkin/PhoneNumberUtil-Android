@@ -9,6 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/phonenumberutil" />
+            <option value="$PROJECT_DIR$/phonenumberutil-dataconverter" />
             <option value="$PROJECT_DIR$/phonenumberutilcore" />
             <option value="$PROJECT_DIR$/sample" />
           </set>
@@ -17,6 +18,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/phonenumberutil" />
+            <option value="$PROJECT_DIR$/phonenumberutil-dataconverter" />
             <option value="$PROJECT_DIR$/phonenumberutilcore" />
             <option value="$PROJECT_DIR$/sample" />
           </set>
