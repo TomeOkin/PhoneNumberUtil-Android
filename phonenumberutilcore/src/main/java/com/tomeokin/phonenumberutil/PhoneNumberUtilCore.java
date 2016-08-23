@@ -15,7 +15,6 @@
  */
 package com.tomeokin.phonenumberutil;
 
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -29,11 +28,6 @@ import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
 public class PhoneNumberUtilCore {
-    static final MetadataLoader DEFAULT_METADATA_LOADER = new MetadataLoader() {
-        @Override public InputStream loadMetadata(String metadataFileName) {
-            return PhoneNumberUtilCore.class.getResourceAsStream(metadataFileName);
-        }
-    };
     private static final Logger logger = Logger.getLogger(PhoneNumberUtilCore.class.getName());
 
     /** Flags to use when compiling regular expressions for phone numbers. */
